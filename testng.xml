@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="NSE_Test_Suite">
+  <parameter name="base_url" value="https://www1.nseindia.com" />
+  <parameter name="feature_url" value="/live_market/dynaContent/live_watch/equities_stock_watch.htm#" />
+  <!--parameter name="browser" value="chrome" /-->
+  <parameter name="browser" value="Firefox" />
+  <parameter name="BasePageTitle" value="NSE - National Stock Exchange of India Ltd." />
+   <test name="Stock_Watch_Tests">
+  <parameter name="feature_url" value="/live_market/dynaContent/live_watch/equities_stock_watch.htm#" />
+    <classes>
+      <class name="com.stocksValidation.PageSetupTest"/>
+      <class name="com.stocksValidation.StockAdvanceTest"/>
+      <class name="com.stocksValidation.StockDeclineTest"/>
+      <class name="com.stocksValidation.ChangePercentValidationTest"/>
+      <class name="com.stocksValidation.ChangePercentDescendingTest" />
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

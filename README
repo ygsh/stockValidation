@@ -1,0 +1,35 @@
+STOCKS VALIDATION TEST SUIT README
+----------------------------------
+
+1. Test suite uses Selenium, Maven and TestNG with PageObject patterns and PageFacotry locators.
+
+2. After unzipping the project, to run the tests from command line, from the folder with pom.xml, please run below command:
+    - mvn -e clean install test -DsuiteXmlFile=testng.xml
+    - Reports can be found under Project -> target -> surefire-reports -> index.html and emailable-report.html
+
+3. To run as Maven tests from Eclipse IDE: 
+	- Import the project as a maven project.
+	- Set run configuration by right clicking on pom.xml and add argument "testng.xml" and hit run.
+	- Reports can be found under Project -> target -> surefire-reports -> index.html and emailable-report.html
+	
+4. To run as a TestNG suite from Eclipse IDE:
+	- Import the project as a maven project.
+	- Install all dependencies by right clicking on pom.xml and performing maven install.
+	- Right click on testng.xml and run as Test NG Suite.
+	- Reports can be found under Project -> test-output ->index.html and emailable-report.html
+
+5. Data is driven through textng.xml(Default browser is Firefox, but Chrome can be set as well)
+
+6. Global parameters can be overridden at test level.
+
+7. StocksWatch page is under src/main/java, tests using this page are created under src/test/java.
+
+8. All tests extend TestSetup, base class takes care of driver initiation and closure.
+
+9. Please note, current stocks page has issues with the percentage changes calculations. For example:
+   (10.00/403.20) * 100 = 2.4813896. The server however stores this as 2.7. Possibly the calculation 
+   are done in the backend with double digits for Opening stocks, Change in value and Change percent
+   and then the results have been rounded off to two decimal places and uploaded.
+   
+   This bug is causing the test "ChangePercentValidationTest" to fail.
+

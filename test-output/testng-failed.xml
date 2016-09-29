@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [NSE_Test_Suite]">
+  <parameter name="BasePageTitle" value="NSE - National Stock Exchange of India Ltd."/>
+  <parameter name="browser" value="Firefox"/>
+  <parameter name="base_url" value="https://www1.nseindia.com"/>
+  <parameter name="feature_url" value="/live_market/dynaContent/live_watch/equities_stock_watch.htm#"/>
+  <test name="Stock_Watch_Tests">
+    <parameter name="feature_url" value="/live_market/dynaContent/live_watch/equities_stock_watch.htm#"/>
+    <classes>
+      <class name="com.stocksValidation.PageSetupTest"/>
+      <class name="com.stocksValidation.StockAdvanceTest"/>
+      <class name="com.stocksValidation.StockDeclineTest"/>
+      <class name="com.stocksValidation.ChangePercentValidationTest"/>
+      <class name="com.stocksValidation.ChangePercentDescendingTest"/>
+    </classes>
+  </test> <!-- Stock_Watch_Tests -->
+  <test name="Stock_Watch_Tests(failed)">
+    <parameter name="feature_url" value="/live_market/dynaContent/live_watch/equities_stock_watch.htm#"/>
+    <classes>
+      <class name="com.stocksValidation.StockDeclineTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="setDriver"/>
+        </methods>
+      </class> <!-- com.stocksValidation.StockDeclineTest -->
+      <class name="com.stocksValidation.ChangePercentValidationTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="validateChangePercentAllStocks"/>
+          <include name="setDriver"/>
+        </methods>
+      </class> <!-- com.stocksValidation.ChangePercentValidationTest -->
+      <class name="com.stocksValidation.StockAdvanceTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="setDriver"/>
+        </methods>
+      </class> <!-- com.stocksValidation.StockAdvanceTest -->
+      <class name="com.stocksValidation.PageSetupTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="setDriver"/>
+        </methods>
+      </class> <!-- com.stocksValidation.PageSetupTest -->
+      <class name="com.stocksValidation.ChangePercentDescendingTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="setDriver"/>
+        </methods>
+      </class> <!-- com.stocksValidation.ChangePercentDescendingTest -->
+    </classes>
+  </test> <!-- Stock_Watch_Tests(failed) -->
+</suite> <!-- Failed suite [NSE_Test_Suite] -->
