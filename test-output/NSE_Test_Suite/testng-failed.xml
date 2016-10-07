@@ -20,35 +20,37 @@
     <classes>
       <class name="com.stocksValidation.StockDeclineTest">
         <methods>
-          <include name="tearDown"/>
-          <include name="setDriver"/>
+          <include name="matchDeclinesInHeadingAndTable"/>
+          <include name="validateFirstElementIsDeclines"/>
+          <include name="validateSecondElementInDeclinesIsInt"/>
         </methods>
       </class> <!-- com.stocksValidation.StockDeclineTest -->
-      <class name="com.stocksValidation.ChangePercentValidationTest">
-        <methods>
-          <include name="tearDown"/>
-          <include name="validateChangePercentAllStocks"/>
-          <include name="setDriver"/>
-        </methods>
-      </class> <!-- com.stocksValidation.ChangePercentValidationTest -->
       <class name="com.stocksValidation.StockAdvanceTest">
         <methods>
-          <include name="tearDown"/>
-          <include name="setDriver"/>
+          <include name="validateSecondElementInAdvacesIsInt"/>
+          <include name="validateFirstElementIsAdvances"/>
+          <include name="matchAdvancesInHeadingAndTable"/>
         </methods>
       </class> <!-- com.stocksValidation.StockAdvanceTest -->
       <class name="com.stocksValidation.PageSetupTest">
         <methods>
-          <include name="tearDown"/>
+          <include name="validateStocksPageUIelements"/>
+          <include name="validateStocksPageLoads"/>
           <include name="setDriver"/>
         </methods>
       </class> <!-- com.stocksValidation.PageSetupTest -->
       <class name="com.stocksValidation.ChangePercentDescendingTest">
         <methods>
-          <include name="tearDown"/>
-          <include name="setDriver"/>
+          <include name="changePercentIsDescending"/>
         </methods>
       </class> <!-- com.stocksValidation.ChangePercentDescendingTest -->
+      <class name="com.stocksValidation.ChangePercentValidationTest">
+        <methods>
+          <include name="validateChangePercentNiftyCumulative"/>
+          <include name="validateChangePercentAllStocks"/>
+          <include name="validateColumnHeadings"/>
+        </methods>
+      </class> <!-- com.stocksValidation.ChangePercentValidationTest -->
     </classes>
   </test> <!-- Stock_Watch_Tests(failed) -->
 </suite> <!-- Failed suite [NSE_Test_Suite] -->
