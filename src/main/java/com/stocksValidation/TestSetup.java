@@ -34,8 +34,9 @@ public class TestSetup {
 
 		if(browser.equalsIgnoreCase("Firefox"))
 		{
+			System.setProperty("webdriver.gecko.driver","libs\\geckodriver.exe");
+
 			driver = new FirefoxDriver();
-			
 		}else if (browser.equalsIgnoreCase("chrome")){
 		
 			//Set chromedriver for Mac and Linux below.
